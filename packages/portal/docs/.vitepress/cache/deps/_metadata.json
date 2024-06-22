@@ -1,0 +1,46 @@
+{
+  "hash": "d2166457",
+  "configHash": "c15c675d",
+  "lockfileHash": "027158b9",
+  "browserHash": "202edc38",
+  "optimized": {
+    "vue": {
+      "src": "../../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
+      "file": "vue.js",
+      "fileHash": "9eb1875f",
+      "needsInterop": false
+    },
+    "vitepress > @vue/devtools-api": {
+      "src": "../../../../node_modules/@vue/devtools-api/dist/index.js",
+      "file": "vitepress___@vue_devtools-api.js",
+      "fileHash": "43d2b3a2",
+      "needsInterop": false
+    },
+    "vitepress > @vueuse/core": {
+      "src": "../../../../node_modules/@vueuse/core/index.mjs",
+      "file": "vitepress___@vueuse_core.js",
+      "fileHash": "b40d6069",
+      "needsInterop": false
+    },
+    "easymde": {
+      "src": "../../../../node_modules/easymde/src/js/easymde.js",
+      "file": "easymde.js",
+      "fileHash": "225d8534",
+      "needsInterop": true
+    },
+    "marked": {
+      "src": "../../../../node_modules/marked/lib/marked.esm.js",
+      "file": "marked.js",
+      "fileHash": "c7539b98",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-BJ3OZQ3N": {
+      "file": "chunk-BJ3OZQ3N.js"
+    },
+    "chunk-KZF2VKC5": {
+      "file": "chunk-KZF2VKC5.js"
+    }
+  }
+}

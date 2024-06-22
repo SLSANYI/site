@@ -1,0 +1,24 @@
+{
+  "name": "@slsanyi/portal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "reading-time": "^1.5.0",
+    "sass": "^1.77.6",
+    "vitepress": "^1.2.3"
+  },
+  "dependencies": {
+    "easymde": "^2.18.0",
+    "marked": "^13.0.1"
+  }
+}
