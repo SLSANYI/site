@@ -25,7 +25,14 @@ const pageName = computed(() =>
 .container {
   margin-top: 66px;
   max-width: 800px;
-  padding: 0 14px;
+  padding: 0 40px;
   margin: 65px auto 0 auto;
+}
+
+@media (max-width: 640px) {
+  div[class*='language-'] {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
 }
 </style>
