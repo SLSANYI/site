@@ -1,3 +1,29 @@
 .vp-doc a {
   text-decoration: none;
 }
+
+/* .medium-zoom-overlay {
+  z-index: 20;
+}
+
+.medium-zoom-image {
+  z-index: 21;
+} */
+
+.wrap-react {
+  margin-top: 20px;
+  padding: 22px 24px;
+  border-radius: 8px;
+  /* box-shadow: var(--vt-shadow-2); */
+  /* box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07), 0 1px 4px rgba(0, 0, 0, 0.07); */
+  margin-bottom: 1.2em;
+  background-color: var(--vp-code-block-bg);
+  transition: background-color 0.5s ease;
+}
+
+.demo-btn {
+  border: 1px solid gray;
+  margin-left: 20px;
+  border-radius: 10px;
+  padding: 0 15px;
+}

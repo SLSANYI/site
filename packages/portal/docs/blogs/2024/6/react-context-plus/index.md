@@ -1,9 +1,15 @@
 ---
-summary: 基于 React Context API 的状态管理库
+title: 基于 React Context API 的状态管理库
 layout: blog
 ---
 
-# {{ $frontmatter.summary }}
+<script setup>
+import Demo from '@/components/ReactWrap/index.vue'
+import OriginApp from './demo/origin.jsx'
+import OptimizationApp from './demo/index.jsx'
+</script>
+
+# {{ $frontmatter.title }}
 
 ## 起因
 
@@ -48,6 +54,10 @@ function App() {
 export default App
 ```
 
+### 结果如下
+
+<Demo :component="OriginApp"/>
+
 但是在定义和使用的时候，能否简化下呢？
 
 - `Provider` 初始化后，只需调用 `useXX` 就返回 `Context` 的值，而无需再引入具体 `Context`
@@ -57,7 +67,7 @@ export default App
 
 为了梳理下思路，我们可以画个图，如下:
 
-![logic](./assets/image.png)
+![logic](../assets/image.png){data-zoomable}
 
 ## 实现
 
@@ -144,6 +154,10 @@ function App() {
 
 export default App
 ```
+
+### 结果展示
+
+<Demo :component="OptimizationApp"/>
 
 ## 优缺点
 

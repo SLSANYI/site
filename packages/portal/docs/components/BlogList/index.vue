@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import BlogItem from "./BlogItem.vue";
-import { data } from "./content.data";
+import BlogItem from './BlogItem.vue'
+import { data } from './content.data'
 </script>
 
 <template>
@@ -11,7 +11,7 @@ import { data } from "./content.data";
     <div :class="$style.list">
       <BlogItem
         v-for="item in data"
-        :title="item.frontmatter?.summary"
+        :title="item.frontmatter?.title"
         :readTime="item.readTime"
         :url="item.url"
       />

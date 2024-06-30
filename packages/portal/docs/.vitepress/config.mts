@@ -1,19 +1,21 @@
-import { defineConfig } from "vitepress";
-import { base } from "../constant";
+import { defineConfig } from 'vitepress'
+import { fileURLToPath } from 'node:url'
+import { base } from '../constant'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "SANYI",
-  description: "SLSANYI Portal",
+  title: 'SANYI',
+  description: 'SLSANYI Portal',
   base,
-  head: [["link", { rel: "icon", href: "/site/favicon.ico" }]],
+  head: [['link', { rel: 'icon', href: '/site/favicon.ico' }]],
   themeConfig: {
-    logo: "/logo.png",
-    siteTitle: "SANYI",
+    logo: '/logo.png',
+    siteTitle: 'SANYI',
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: "Home", link: "/" },
-      // { text: "Examples", link: "/markdown-examples" },
+      { text: 'Home', link: '/' },
+      { text: 'Blogs', link: '/blogs/index' },
+      { text: 'Tools', link: '/tools/index' }
     ],
 
     // sidebar: [
@@ -30,7 +32,15 @@ export default defineConfig({
       // { icon: "github", link: "https://github.com/vuejs/vitepress" },
     ],
     footer: {
-      copyright: "Copyright © 2024-present SLSANYI Power By VitePress",
-    },
+      copyright: 'Copyright © 2024-present SLSANYI Power By VitePress'
+    }
   },
-});
+  vite: {
+    resolve: {
+      alias: {
+        '@': fileURLToPath(new URL('../', import.meta.url))
+      }
+    }
+    // Vite 配置选项
+  }
+})
