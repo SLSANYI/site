@@ -17,42 +17,11 @@ import OptimizationApp from './demo/index.jsx'
 
 使用方式如下：
 
-```js
-import { createContext, useContext, useState } from 'react'
+::: code-group
 
-const CounterContext = createContext(null)
+<<< ./demo/origin.jsx
 
-function ClickButton() {
-  const { count, increaseCount } = useContext(CounterContext)
-
-  return (
-    <div>
-      <span>{count}</span>
-      <button onClick={() => increaseCount()}>Increase Count</button>
-    </div>
-  )
-}
-
-function App() {
-  const [value, setValue] = useState({
-    count: 1,
-    increaseCount() {
-      setValue((pre) => ({
-        ...pre,
-        count: pre.count + 1
-      }))
-    }
-  })
-
-  return (
-    <CounterContext.Provider value={value}>
-      <ClickButton />
-    </CounterContext.Provider>
-  )
-}
-
-export default App
-```
+:::
 
 ### 结果如下
 
@@ -73,87 +42,21 @@ export default App
 
 核心代码如下：
 
-`store/create-store.js`
+::: code-group
 
-```js
-import { createContext, useContext } from 'react'
+<<< ./demo/store/create-store.jsx[store/create-store.jsx]
 
-export function createStore(useHook) {
-  const Context = createContext(null)
+:::
 
-  function Provider(props) {
-    const { children, initialState } = props
+以上就是全部代码了,包含换行只有 `22` 行代码实现, 让我们作为调用方试试
 
-    const value = useHook(initialState)
+::: code-group
 
-    return <Context.Provider value={value}>{children}</Context.Provider>
-  }
+<<< ./demo/index.jsx
 
-  function useStore() {
-    return useContext(Context)
-  }
+<<< ./demo/store/counter.js[store/store.js]
 
-  return {
-    Provider,
-    useStore
-  }
-}
-```
-
-以上就是全部代码了,只有 `16` 行代码实现, 让我们作为调用方试试
-
-`store/counter.js`
-
-```js
-import { useCallback, useState } from 'react'
-import { createStore } from './create-store'
-
-function useHook(initialState = 0) {
-  const [count, setCount] = useState(initialState)
-
-  const increaseCount = useCallback(() => {
-    setCount((pre) => pre + 1)
-  }, [])
-
-  return {
-    count,
-    increaseCount
-  }
-}
-
-const counterStore = createStore(useHook)
-
-export const CounterProvider = counterStore.Provider
-
-export const useCounter = counterStore.useStore
-```
-
-`App.js`
-
-```js
-import { CounterProvider, useCounter } from './store/counter'
-
-function ClickButton() {
-  const { count, increaseCount } = useCounter()
-
-  return (
-    <div>
-      <span>{count}</span>
-      <button onClick={() => increaseCount()}>Increase Count</button>
-    </div>
-  )
-}
-
-function App() {
-  return (
-    <CounterProvider initialState={1}>
-      <ClickButton />
-    </CounterProvider>
-  )
-}
-
-export default App
-```
+:::
 
 ### 结果展示
 

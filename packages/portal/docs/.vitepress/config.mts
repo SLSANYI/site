@@ -41,6 +41,11 @@ export default defineConfig({
         '@': fileURLToPath(new URL('../', import.meta.url))
       }
     }
-    // Vite 配置选项
+  },
+  markdown: {
+    lineNumbers: true
+    // container: {
+    //   infoLabel: 'infoaa'
+    // }
   }
 })
